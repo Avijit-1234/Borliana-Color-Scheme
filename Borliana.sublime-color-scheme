@@ -1,0 +1,180 @@
+/*
+ *  ____                  _   _  
+ * |  _ \    ___    _ __ | | (_)   __ _   _ __     __ _
+ * | |_) |  / _ \  | '__|| | | |  / _` | | '_ \   / _` |
+ * |  _ <  | (_) | | |   | | | | | (_| | | | | | | (_| |
+ * | |_) |  \___/  |_|   |_| |_|  \__,_| |_| |_|  \__,_|
+ * |____/ 
+ *
+ * Theme Name: Borliana
+ * Description: The lovechild of the classic, high-contrast "Borland" identity 
+ * (deep navy background, prominent text) and the soft, eye-soothing 
+ * pastel color science of "Mariana". It keeps the heavy, bold visual 
+ * weight of Borland without the retina burn.
+ * Author: Avijit Mishra
+ * Copyright: (c) 2026 Avijit Mishra
+ * License: MIT License
+ */
+
+{
+    "name": "Borliana",
+    "variables":
+    {
+        "borliana_bg": "#121A2F",
+        "borliana_fg": "#C7D8F2",
+        "borliana_fg_soft": "#AEBFD6",
+        "borliana_fg_dim": "#7F93AD",
+        "mariana_yellow": "#FAC863",
+        "mariana_orange": "#F9AE58",
+        "mariana_dark_orange": "#F99157",
+        "mariana_red": "#EC5F67",
+        "mariana_blue": "#6699CC",
+        "mariana_green": "#99C794",
+        "mariana_purple": "#C594C5",
+        "mariana_grey": "#A6ACB9",
+        "mariana_dark_grey": "#65737E",
+        "mariana_comment": "#4D5D6F",
+        "preprocessor_define": "#E07070",
+        "preprocessor_pragma": "#5FB4A2",
+        "selection_bg": "#3E527A",
+        "line_hl": "#1D2942"
+    },
+    "globals":
+    {
+        "background": "var(borliana_bg)",
+        "foreground": "var(borliana_fg)",
+        "caret": "var(mariana_yellow)",
+        "line_highlight": "var(line_hl)",
+        "selection": "var(selection_bg)",
+        "selection_border": "var(selection_bg)",
+        "inactive_selection": "var(line_hl)",
+        "gutter_foreground": "var(mariana_comment)"
+    },
+    "rules":
+    [
+        {
+            "name": "Comments",
+            "scope": "comment, punctuation.definition.comment",
+            "foreground": "var(mariana_comment)",
+            "font_style": "italic"
+        },
+        {
+            "name": "Strings and Quotes",
+            "scope": "string, punctuation.definition.string",
+            "foreground": "var(mariana_green)"
+        },
+        {
+            "name": "Numbers and Constants",
+            "scope": "constant.numeric, constant.language, constant.character, constant.other",
+            "foreground": "var(mariana_orange)"
+        },
+        {
+            "name": "Preprocessor Define (#define #undef)",
+            "scope": "meta.preprocessor.macro, keyword.control.import.define, keyword.control.import.undef",
+            "foreground": "var(preprocessor_define)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Preprocessor Pragma (#pragma)",
+            "scope": "meta.preprocessor.pragma, keyword.control.import.pragma",
+            "foreground": "var(preprocessor_pragma)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Preprocessor Include (#include)",
+            "scope": "meta.preprocessor, keyword.control.import, punctuation.definition.directive",
+            "foreground": "var(mariana_blue)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Keywords and Control Flow",
+            "scope": "keyword.control, keyword.other",
+            "foreground": "var(mariana_blue)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Storage Types (int, long, void)",
+            "scope": "storage.type, storage.modifier",
+            "foreground": "var(mariana_purple)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Classes and Types",
+            "scope": "entity.name.class, entity.name.type, support.type, support.class",
+            "foreground": "var(mariana_yellow)"
+        },
+        {
+            "name": "Functions (user-defined and stdlib)",
+            "scope": "entity.name.function, support.function, meta.function-call entity.name.function",
+            "foreground": "var(mariana_blue)"
+        },
+        {
+            "name": "Namespaces",
+            "scope": "entity.name.namespace, support.other.namespace",
+            "foreground": "var(mariana_purple)"
+        },
+        {
+            "name": "Standard Library Objects (cin, cout, endl)",
+            "scope": "support.variable, support.constant, support.other, variable.language",
+            "foreground": "var(mariana_red)"
+        },
+        {
+            "name": "User Variables",
+            "scope": "variable.other, variable.other.readwrite, entity.name.variable",
+            "foreground": "var(borliana_fg)"
+        },
+        {
+            "name": "Function Parameters",
+            "scope": "variable.parameter",
+            "foreground": "var(mariana_orange)",
+            "font_style": "italic"
+        },
+        {
+            "name": "Scope Resolution (::)",
+            "scope": "punctuation.separator.namespace, punctuation.accessor.double-colon",
+            "foreground": "var(mariana_yellow)"
+        },
+        {
+            "name": "Member Access (. ->)",
+            "scope": "punctuation.accessor, punctuation.separator.pointer-access, keyword.operator.member",
+            "foreground": "var(mariana_orange)"
+        },
+        {
+            "name": "Assignment (= += -= etc)",
+            "scope": "keyword.operator.assignment",
+            "foreground": "var(mariana_purple)"
+        },
+        {
+            "name": "Arithmetic and Comparison (+ - * / == != < >)",
+            "scope": "keyword.operator.arithmetic, keyword.operator.comparison, keyword.operator.logical, keyword.operator.word",
+            "foreground": "var(mariana_dark_orange)"
+        },
+        {
+            "name": "Stream and Bitwise (<< >> & | ^)",
+            "scope": "keyword.operator.bitwise",
+            "foreground": "var(mariana_blue)"
+        },
+        {
+            "name": "Brackets and Braces ({ } [ ] ( ))",
+            "scope": "punctuation.section.block, punctuation.section.brackets, punctuation.section.parens, punctuation.definition.begin, punctuation.definition.end, meta.block punctuation.section, meta.brackets punctuation.section, meta.group punctuation.section",
+            "foreground": "var(mariana_yellow)"
+        },
+        {
+            "name": "Comma Separators (,)",
+            "scope": "punctuation.separator.comma",
+            "foreground": "var(mariana_grey)"
+        },
+        {
+            "name": "Line Terminators (;)",
+            "scope": "punctuation.terminator.statement",
+            "foreground": "var(mariana_dark_grey)"
+        },
+        {
+            "name": "Invalid",
+            "scope": "invalid",
+            "background": "var(mariana_red)",
+            "foreground": "var(borliana_bg)",
+            "font_style": "bold"
+        }
+    ]
+}
